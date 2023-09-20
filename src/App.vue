@@ -15,10 +15,16 @@ export default {
 </script>
 
 <template>
-  <AppHeader />
-  <AppMain />
-  <AppFooter />
-  <AppLoader />
+  <body>
+    <AppHeader />
+    <AppMain />
+    <AppFooter />
+    <AppLoader />
+  </body>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+body {
+  min-width: 1100px;
+}
+</style>

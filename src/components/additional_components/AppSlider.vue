@@ -1,12 +1,12 @@
 <script>
 const slides = [
   {
-    image: "src/assets/slider-autocar-5.jpg",
+    image: "src/assets/JPG/slider-autocar-5.jpg",
     title: "Buy And Sell Your Car At Its Value",
     text: "Find the right price and dealer",
   },
   {
-    image: "src/assets/slider-autocar-6.jpg",
+    image: "src/assets/JPG/slider-autocar-6.jpg",
     title: "Your Trusted Source For Quality Cars And Service",
     text: "Driving Dreams: Where Cars Meet Perfection",
   },
@@ -17,6 +17,7 @@ export default {
     return {
       slides,
       activeSlide: 0,
+      autoplayInterval: null,
     };
   },
   methods: {
@@ -40,22 +41,19 @@ export default {
       this.activeSlide = index;
     },
 
-    autoplay() {
-      if (!this.autoplay) {
-        this.autoplay = setInterval(this.nextSlide, 2500);
-      }
+    startAutoplay() {
+      this.autoplayInterval = setInterval(() => {
+        this.activeSlide = (this.activeSlide + 1) % this.slides.length;
+      }, 3000);
     },
 
     stopAutoplay() {
-      if (this.autoplay) {
-        clearInterval(this.autoplay);
-        this.autoplay = false;
-      }
+      clearInterval(this.autoplayInterval);
     },
   },
 
-  created() {
-    this.autoplay;
+  mounted() {
+    this.startAutoplay();
   },
 };
 </script>
@@ -63,7 +61,11 @@ export default {
 <template>
   <div class="slider-wrapper" tabindex="0">
     <div class="item">
-      <div class="media item">
+      <div
+        @mouseenter="stopAutoplay()"
+        @mouseleave="startAutoplay()"
+        class="item"
+      >
         <img
           :src="slides[activeSlide].image"
           :alt="slides[activeSlide].title"
@@ -90,8 +92,8 @@ export default {
 
 <style lang="scss" scoped>
 .item {
+  margin-top: 80px;
   width: 100%;
-  height: 100%;
   position: relative;
 }
 
@@ -102,6 +104,7 @@ export default {
 }
 
 .item .text {
+  min-width: 370px;
   width: 30%;
   position: absolute;
   left: 15%;
@@ -109,7 +112,6 @@ export default {
   text-align: left;
   color: white;
 }
-
 .prev,
 .next {
   width: 20px;
@@ -121,17 +123,14 @@ export default {
   cursor: pointer;
   z-index: 999;
 }
-
 .next {
   bottom: 50%;
   left: 5%;
 }
-
 .prev {
   bottom: 50%;
   right: 5%;
 }
-
 .prev::after {
   content: "";
   width: 15px;
@@ -144,7 +143,6 @@ export default {
   left: 50%;
   transform: translate(-50%) rotate(45deg);
 }
-
 .next::before {
   content: "";
   width: 15px;

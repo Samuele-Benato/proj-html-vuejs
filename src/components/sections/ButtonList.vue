@@ -1,32 +1,5 @@
 <script>
-const buttonList = [
-  {
-    title: "Keywords",
-  },
-  {
-    title: "Location",
-  },
-  {
-    title: "All Categories",
-    text: ["Cabrio", "Coupe", "Hatchback", "Pick Up", "Sedan", "SUV"],
-  },
-  {
-    title: "Brand",
-    text: ["Ford", "BMW", "Mercedes-Benz", "Audi"],
-  },
-  {
-    title: "Fuel Type",
-    text: ["Gasoline", "Diesel", "Electric"],
-  },
-  {
-    title: "Transmission",
-    text: ["Automatic Transmission", "Manual Transmission"],
-  },
-  {
-    title: "Status",
-    text: ["Used", "New"],
-  },
-];
+import { buttonList } from "../../dataArrays";
 
 export default {
   data() {
@@ -49,7 +22,7 @@ export default {
       >
         {{ button.title }}
       </button>
-      <ul class="dropdown-menu">
+      <ul v-if="button.text" class="dropdown-menu">
         <li v-for="text in button.text">
           <a class="dropdown-item" href="#">{{ text }}</a>
         </li>
@@ -69,6 +42,7 @@ export default {
     padding: 10px 20px;
     border-radius: 2px;
     box-shadow: 1px 1px 1px 1px #aaa;
+    color: #aaa;
   }
 }
 </style>

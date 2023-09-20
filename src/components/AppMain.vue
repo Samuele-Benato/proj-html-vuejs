@@ -2,6 +2,7 @@
 import AppSlider from "./additional_components/AppSlider.vue";
 import ButtonList from "./sections/ButtonList.vue";
 import ListingsVehicles from "./sections/ListingsVehicles.vue";
+import CardsCar from "./sections/CardsCar.vue";
 
 export default {
   data() {
@@ -12,6 +13,7 @@ export default {
     AppSlider,
     ButtonList,
     ListingsVehicles,
+    CardsCar,
   },
 };
 </script>
@@ -20,6 +22,7 @@ export default {
   <AppSlider />
   <ButtonList />
   <ListingsVehicles />
+  <CardsCar />
 </template>
 
 <style lang="scss" scoped></style>

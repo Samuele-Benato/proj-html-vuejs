@@ -1,60 +1,5 @@
 <script>
-const listingsVehicles = [
-  {
-    image: "src/assets/JPG/cabrio.jpg",
-    title: "Cabrio",
-    text: "3 Listings",
-    brand: "Audi",
-    fuel: "Electric",
-    transmission: "Automatic Transmission",
-    status: "New",
-  },
-  {
-    image: "src/assets/JPG/coupe.jpg",
-    title: "Coupe",
-    text: "0 Listings",
-    brand: "BMW",
-    fuel: "Diesel",
-    transmission: "Automatic Transmission",
-    status: "New",
-  },
-  {
-    image: "src/assets/JPG/hatchback.jpg",
-    title: "Hatchback",
-    text: "2 Listings",
-    brand: "Ford",
-    fuel: "Gasoline",
-    transmission: "Automatic Transmission",
-    status: "Used",
-  },
-  {
-    image: "src/assets/JPG/pickup.jpg",
-    title: "Pick Up",
-    text: "0 Listings",
-    brand: "BMW",
-    fuel: "Diesel",
-    transmission: "Manual Transmission",
-    status: "Used",
-  },
-  {
-    image: "src/assets/JPG/sedan.jpg",
-    title: "Sedan",
-    text: "3 Listings",
-    brand: "Mercedes-Benz",
-    fuel: "Gasoline",
-    transmission: "Manual Transmission",
-    status: "Used",
-  },
-  {
-    image: "src/assets/JPG/suv.jpg",
-    title: "Suv",
-    text: "4 Listings",
-    brand: "Audi",
-    fuel: "Diesel",
-    transmission: "Automatic Transmission",
-    status: "New",
-  },
-];
+import { listingsVehicles } from "../../dataArrays";
 export default {
   data() {
     return {
@@ -75,7 +20,7 @@ export default {
         <img :src="vehicle.image" alt="vehicle image" />
       </div>
       <div class="card-text pb-2">
-        <h4>{{ vehicle.title }}</h4>
+        <h4 class="fs-5">{{ vehicle.typology }}</h4>
         <span>{{ vehicle.text }}</span>
       </div>
     </div>

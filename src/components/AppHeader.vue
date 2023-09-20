@@ -1,13 +1,5 @@
 <script>
-const headerUrls = [
-  "Home",
-  "About Us",
-  "Vehicles",
-  "Dealers",
-  "Packages",
-  "Blog",
-  "Contact",
-];
+import { headerUrls } from "../dataArrays";
 export default {
   data() {
     return {
@@ -25,7 +17,7 @@ export default {
       <!-- HEADER URLS -->
       <ul>
         <li v-for="(headerUrl, index) in headerUrls" :key="index">
-          <a href="#"> {{ headerUrl }}</a>
+          <a :href="headerUrl.goTo"> {{ headerUrl.title }}</a>
         </li>
       </ul>
       <div>
@@ -57,6 +49,7 @@ header {
   z-index: 1;
   height: 80px;
   background-color: rgba($color: #fff, $alpha: 1);
+  box-shadow: 2px 2px 2px 2px #000;
   .container {
     min-width: 960px;
     margin: 0 auto;
@@ -83,6 +76,9 @@ header {
         border-radius: 5px;
 
         background-color: black;
+        &:hover {
+          transform: scale(1.03);
+        }
         img {
           min-height: 50%;
           max-height: 100%;

@@ -6,8 +6,16 @@ import {
   faCar,
   faGasPump,
   faHeart,
+  faQuoteRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faCircleCheck, faDollarSign, faCar, faGasPump, faHeart);
+library.add(
+  faCircleCheck,
+  faDollarSign,
+  faCar,
+  faGasPump,
+  faHeart,
+  faQuoteRight
+);
 
 export { FontAwesomeIcon };

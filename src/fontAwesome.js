@@ -7,6 +7,9 @@ import {
   faGasPump,
   faHeart,
   faQuoteRight,
+  faLocationDot,
+  faPhoneVolume,
+  faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -15,7 +18,10 @@ library.add(
   faCar,
   faGasPump,
   faHeart,
-  faQuoteRight
+  faQuoteRight,
+  faLocationDot,
+  faPhoneVolume,
+  faEnvelope
 );
 
 export { FontAwesomeIcon };
